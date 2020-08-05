@@ -121,10 +121,10 @@
                         <div class="col-12 col-md-2">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success">
-                                    <input type="radio" name="section" id="smoking" checked> Smoking
+                                    <input type="radio" name="section" id="smoking"> Smoking
                                 </label>
                                 <label class="btn btn-danger">
-                                    <input type="radio" name="section" id="non-smoking"> Non-smoking
+                                    <input type="radio" name="section" id="non-smoking" checked> Non-smoking
                                 </label>
                             </div>
                         </div>
@@ -217,6 +217,15 @@
                 <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+
+                <div class="btn-group" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                        <span class="fa fa-pause"></span>
+                    </button>
+                    <button class="btn-btn-danger btn-sm" id="carousel-play">
+                        <span class="fa fa-play"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -323,5 +332,17 @@
     <script src=node_modules/popper.js/dist/umd/popper.min.js></script>
     <script src=node_modules/bootstrap/dist/js/bootstrap.min.js></script>
 </body>
-
+<script>
+    $(document).ready(function(){
+        $("#carousel").carousel({
+            interval: 2000
+        });
+        $("#carousel-pause").click(function(){
+            $("#carousel").carousel('pause');
+        });
+        $("#carousel-play").click(function(){
+            $("#carousel").carousel('cycle');
+        });
+    });
+</script>
 </html>
